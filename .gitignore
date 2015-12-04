@@ -20,3 +20,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+/explain-ejb/nbproject/
+/nbproject/
