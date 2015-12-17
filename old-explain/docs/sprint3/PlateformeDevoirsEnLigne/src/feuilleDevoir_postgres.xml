@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap>
+
+<!-- alias classe [FeuilleDevoir] -->
+
+<typeAlias alias="FeuilleDevoir.class" type="Entites.FeuilleDevoir"/>
+
+<!-- mapping table [feuille_devoir] & object [FeuilleDevoir] -->
+
+<!-- fixe les correspondances entre colonnes de la table
+ [feuille_devoir] et champs de l’objet [FeuilleDevoir]. -->
+
+<resultMap id="FeuilleDevoir.map" class="Entites.FeuilleDevoir" >
+	<result property="id" column="id_feuille_devoir"/> 
+	<result property="nomFeuille" column="nom_feuille_devoir"/>
+	<result property="idProf" column="id_prof"/>
+	<result property="emplacement" column="emplacement"/>
+	<result property="idCours" column="id_cours"/>
+	<result property="maxRendu" column="max_rendus"/>
+	<result property="dateRendu" column="date_rendu"/>	
+</resultMap>
+
+<!-- liste de tous les feuilles devoirs -->
+
+<select id="FeuilleDevoir.selectAllDevoirs" resultMap="FeuilleDevoir.map">
+	select "id_feuille_devoir", "nom_feuille_devoir", "id_prof", "emplacement", "id_cours", "max_rendus", "date_rendu"
+	FROM "feuille_devoir"
+</select>
+
+<!-- select une feuille devoir -->
+<select id="FeuilleDevoir.selectOneDevoir" resultMap="FeuilleDevoir.map">
+	select "id_feuille_devoir", "nom_feuille_devoir", "id_prof", "emplacement","id_cours", "max_rendus", "date_rendu"
+	FROM "feuille_devoir"
+	WHERE "id_feuille_devoir" = #value#
+ </select>
+
+<!-- insert une feuile devoir -->
+<insert id="FeuilleDevoir.insertOneDevoir" parameterClass="FeuilleDevoir.class">
+	<!-- selectKey keyProperty="id">
+		
+		select nextval('"feuille_devoir_id_feuille_devoir_seq"') as value 
+	</selectKey-->
+	insert into "feuille_devoir" ("id_feuille_devoir", "nom_feuille_devoir", "id_prof", "emplacement",
+	 "id_cours", "max_rendus", "date_rendu")
+	VALUES (#id#, #nomFeuille#, #idProf#, #emplacement# ,#idCours#, #maxRendu#, #dateRendu#) 
+</insert>
+
+<!-- update une feuille devoir -->
+<update id="FeuilleDevoir.updateOneDevoir" parameterClass="FeuilleDevoir.class">
+	update "feuille_devoir" 
+	set "id_feuille_devoir"=#id#, "nom_feuille_devoir"=#nomFeuille#, "id_prof"=#idProf#, "emplacement"=#emplacement#,
+	  "id_cours"=#idCours#, "max_rendus"=#maxRendu#, "date_rendu"=#dateRendu#
+	WHERE "id_feuille_devoir" = #id#
+</update>
+
+<!-- delete une feuille devoir -->
+<delete id="FeuilleDevoir.deleteOneDevoir" parameterClass="int">
+delete FROM "feuille_devoir" WHERE "id_feuille_devoir"=#value#
+</delete>
+
+</sqlMap>

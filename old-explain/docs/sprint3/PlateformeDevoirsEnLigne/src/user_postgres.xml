@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+
+
+ <sqlMap>
+ 
+ <!-- alias classe [User] -->
+ 
+ <typeAlias alias="classe" type="Entites.User"/>
+
+<!-- Mapping table [Utilisateur] - object [User] -->
+
+ <!-- le résultat de la requête va être obtenu sous la forme d’un objet [ResultSet]. 
+	L’attribut [resultMap] de la balise <select> indique à [iBATIS] quel " resultMap " il
+	doit utiliser pour transformer chaque ligne du [ResultSet] obtenu en objet. 
+ -->
+ 
+ <resultMap id="User.map"  class="Entites.class">
+	 <result property="id" column="id_utilisateur" />
+	 <result property="login" column="login" />
+	 <result property="auth_serial" column="auth_serial"/>
+	 <result property="autorisation" column="autorisation"/>
+	 <result property="email" column="email"/>
+	 <result property="name" column="nom"/>
+	 <result property="firstName" column="prenom"/>
+	 <result property="birthday" column="date_naissance"/>
+ </resultMap>
+ 
+ <!-- list de toutes les utilisateurs --> 
+
+ <select id="User.selectAll" resultMap="User.map" > 
+ select "id_utilisateur", "login", "auth_serial", "autorisation",
+  "email", "nom", "prenom", "date_naissance" 
+ FROM "utilisateurs"</select>
+ 
+ <!-- obtenir un utilisateur en particulier --> 
+ 
+ <select id="User.selectOne" resultMap="User.map" >
+ select "id_utilisateur", "login", "auth_serial", "autorisation",
+  "email", "nom", "prenom", "date_naissance" 
+ FROM "utilisateurs" 
+ WHERE "id_utilisateur"=#value#</select>
+
+<!-- problème à résoudre: 
+	Lors d'une insertion, l’objet [User] à insérer a son id égal à -1. 
+	Il faut remplacer cette valeur par une clé primaire valide. 
+-->
+<insert id="User.insertOne" parameterClass="classe">
+ <selectKey keyProperty="id_utilisateur">
+	 SELECT next val('"SEQ_ID"') as value
+ </selectKey>
+ insert into "utilisateurs"("id_utilisateur",  "login", "auth_serial",
+  "autorisation", "email", "nom", "prenom", "date_naissance")
+ VALUES(#id#, #login#, #auth_serial#, #autorisation#, #email#, 
+   #name#, #firstName#, #birthday#)
+</insert>
+
+
+ <!-- mettre à jour un utilisateur -->
+ <update id="User.updateOne" parameterClass="classe"> 
+ update "utilisateurs" 
+ set "login"=#login#,"auth_serial"=#auth_serial#,
+ 	"autorisation"=#autorisation#,""email"=#email# ,"nom"=#name#,
+  	"prenom"=#firstName#,"date_naissance"=#birthday#
+ WHERE "id_utilisateur"=#id#
+ </update>
+ 
+ <!-- supprimer un user -->
+ 
+ <delete id="User.deleteOne" parameterClass="int"> 
+ delete FROM "utilisateurs" 
+ WHERE "id_utilisateur"=#value# </delete>
+ 
+ </sqlMap>
+

@@ -1,0 +1,89 @@
+Protocole :
+===========
+
+/// NOTES : 
+Pour le format des réponses, je ne sais pas trop encore très exactement, mais je tiens au courant dès demain.
+Pour les sessions ID, il serait mieux de les mettres dans un cookie mais je ne sais pas trop comment ajax les gere lorsqu'il est executer en local et qu'on fait des requetes sur un autre domaine, j'vais tester ça. Donc pour l'instant il est oublier, si on peut pas le mettre dans les cookies on le passera en parametre POST de chaque requete.
+Il reste encore pas mal de ptits trucs à rajouter.
+
+Authentification : 
+------------------
+Authentifie un utilisateur.
+
+    POST /signIn/$username
+    password=$password
+
+Réponse attendue :
+- Un code d'erreur ou "d'acceptation".
+- Un Sessions ID
+
+Inscription au MOOC :
+---------------------
+
+    POST /signUp/$username
+    password=$password&email=$email&name=$name etc...
+
+Récuperation liste des cours :
+------------------------------
+
+    GET /courses/getList
+
+Inscription a un cours :
+------------------------
+
+    GET /course/join/$courseID
+
+Désinscription d'un cours :
+---------------------------
+
+    GET /course/quit/$courseID
+
+Récuperation de la liste des exercices à faires d'un cours :
+------------------------------------------------------------
+
+    GET /course/$courseID/exercices/getList
+
+Rendre un exercices :
+---------------------
+
+    POST /course/$courseID/exercice/$exerciceID/submit/
+    answers=$answers
+
+Récuperer notes :
+-----------------
+
+    GET /courses/getMarks
+
+Récuperer statistiques de tout les cours :
+------------------------------------------
+
+    GET /courses/getStats
+    
+Récuperer statistiques d'un cours :
+-----------------------------------
+
+    GET /course/$courseID/getStats
+
+Création d'un exercice :
+------------------------
+
+    POST /course/$courseID/exercices/new
+    exercice=$question etc
+
+Création d'une correction :
+---------------------------
+
+    POST /course/$courseID/exercice/$exerciceID/submit/
+
+Envoyer un message à un autres utilisateurs :
+---------------------------------------------
+
+    POST /messages/send
+    recipient=$userID&messageContent=$messageContent
+    
+Récuperer liste des messages :
+------------------------------
+
+    GET /messages/getMessages
+
+

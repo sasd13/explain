@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>PlateformeDevoirs</display-name>
+  <servlet>
+    <servlet-name>PlateFormeDevoirs</servlet-name>
+    <servlet-class>plateFormeDevoirs.web.Controller</servlet-class>
+    <init-param>
+      <param-name>urlListDevoirs</param-name>
+      <param-value>WEB-INF/vues/listDevoir.jsp</param-value>
+    </init-param>
+    <init-param>
+      <param-name>WEB-INF/vues/urlContactCorrecteur</param-name>
+      <param-value>WEB-INF/vues/contactCorrecteur.jsp</param-value>
+    </init-param>
+    <init-param>
+      <param-name>urlEntete</param-name>
+      <param-value>WEB-INF/vues/entete.jsp</param-value>
+    </init-param>
+    <init-param>
+      <param-name>urlMesCours</param-name>
+      <param-value>WEB-INF/vues/mesCours.jsp</param-value>
+    </init-param>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>PlateformeDevoirs</servlet-name>
+    <url-pattern>/Controller</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>WEB-INF/vues/index.jsp</welcome-file>
+    <welcome-file>WEB-INF/vues/entete.jsp</welcome-file>
+  </welcome-file-list>
+  <jsp-config>
+    <taglib>
+      <taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
+      <taglib-location>/WEB-INF/tld/c.tld</taglib-location>
+    </taglib>
+  </jsp-config>
+</web-app>

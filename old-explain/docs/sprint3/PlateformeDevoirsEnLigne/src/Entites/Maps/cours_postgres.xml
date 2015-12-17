@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+
+
+ <sqlMap>
+ 
+ <!-- alias classe [Cours] -->
+ 
+ <typeAlias alias="Cours.classe" type="Entites.Cours"/>
+
+<!-- Mapping table [cours] - object [Cours] -->
+
+ <!-- le résultat de la requête va être obtenu sous la forme d’un objet [ResultSet]. 
+	L’attribut [resultMap] de la balise <select> indique à [iBATIS] quel " resultMap " il
+	doit utiliser pour transformer chaque ligne du [ResultSet] obtenu en objet. 
+ -->
+ 
+ <resultMap id="Cours.map"
+	 class="Entites.Cours.class">
+	 <result property="id" column="id_cours" />
+	 <result property="titre" column="titre" />
+	 <result property="idProf" column="id_prof"/>
+	 <result property="visible" column="visible"/>
+ </resultMap>
+ 
+ <!-- list de toutes les courss --> 
+
+ <select id="Cours.selectAllCours" resultMap="Cours.map" > 
+ SELECT "id_cours", "titre", "id_prof", "visible"
+ FROM "cours"</select>
+ 
+ <!-- obtenir un cours en particulier --> 
+ 
+ <select id="Cours.selectOne" resultMap="Cours.map" >
+ SELECT "id_cours", "titre", "id_prof", "visible"
+ FROM "cours" 
+ WHERE "id_cours"=#value#
+ </select>
+
+<insert id="Cours.insertOne" parameterClass="Cours.classe">
+ <selectKey keyProperty="id_cours">
+	 SELECT next val('"SEQ_ID"') as value
+ </selectKey>
+ INSERT into "cours"("id_cours",  "titre", "id_prof", "visible"
+ VALUES(#id#, #titre#, #idProf#, #visible#)
+</insert>
+
+
+ <!-- mettre à jour un cours -->
+ <update id="Cours.updateOne" parameterClass="Cours.classe"> 
+ UPDATE "cours" 
+ SET "titre"=#titre#,"id_prof"=#idProf#,
+ 	"visible"=#visible#
+ WHERE "id_cours"=#id#
+ </update>
+ 
+ <!-- supprimer un Cours -->
+ 
+ <delete id="Cours.deleteOne" parameterClass="int"> 
+ 	DELETE FROM "cours" 
+ 	WHERE "id_cours"=#value# </delete>
+ 
+ </sqlMap>
+

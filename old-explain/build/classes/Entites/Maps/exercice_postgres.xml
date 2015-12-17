@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+
+
+ <sqlMap>
+ 
+ <!-- alias classe [Exercice] -->
+ 
+ <typeAlias alias="Exercice.classe" type="Entites.Exercice"/>
+
+<!-- Mapping table [exercices] - object [Exercice] -->
+
+ <!-- le résultat de la requête va être obtenu sous la forme d’un objet [ResultSet]. 
+	L’attribut [resultMap] de la balise <select> indique à [iBATIS] quel " resultMap " il
+	doit utiliser pour transformer chaque ligne du [ResultSet] obtenu en objet.
+ -->
+ 
+ <resultMap id="Exercice.map"
+	 class="Entites.Exercice.class">
+	 <result property="id" column="id_exercice" />
+	 <result property="typeExo" column="type_exercice" />
+	 <result property="idFeuille" column="id_feuille_devoir"/>
+	 <result property="numberExo" column="num_exercice"/>
+	 <result property="question" column="enonce"/>
+ </resultMap>
+ 
+ <!-- list de toutes les Exercices --> 
+
+ <select id="Exercice.selectAllExercice" resultMap="Exercice.map" > 
+ SELECT "id_exercice", "type_exercice", "id_feuille_devoir", "num_exercice", "enonce"
+ FROM "exercice"</select>
+ 
+ <!-- obtenir un Exercice en particulier --> 
+ 
+ <select id="Exercice.selectOneExercice" resultMap="Exercice.map" >
+ SELECT"id_exercice", "type_exercice", "id_feuille_devoir","num_exercice", "enonce"
+ FROM "exercice" 
+ WHERE "id_exercice"=#value#
+ </select>
+
+<insert id="Exercice.insertOneExercice" parameterClass="Exercice.classe">
+ <selectKey keyProperty="id_Exercice">
+	 SELECT next val('"SEQ_ID"') as value
+ </selectKey>
+ INSERT into "exercice" ("id_exercice", "type_exercice", "id_feuille_devoir", "num_exercice", "enonce"
+ VALUES(#id#, #typeExo#, #idFeuille#, #numberExo#, #question#)
+</insert>
+
+
+ <!-- mettre à jour un Exercice -->
+ <update id="Exercice.updateOneExercice" parameterClass="Exercice.classe"> 
+ UPDATE "exercice" 
+ SET "type_exercice"=#typeExo#, "id_feuille_devoir" = #idFeuille#,"num_exercice"=#numberExo#, "enonce"=#question#
+ WHERE "id_exercice"=#id#
+ </update>
+ 
+ <!-- supprimer un Exercice -->
+ 
+ <delete id="Exercice.deleteOneExercice" parameterClass="int"> 
+ 	DELETE FROM "exercice" 
+ 	WHERE "id_exercice"=#value# </delete>
+ 
+ </sqlMap>

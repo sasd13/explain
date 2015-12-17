@@ -1,0 +1,10 @@
+Couleurs:
+---------
+
+Principale  : #9D0E30
+Rouge       : #9D1B0D
+Vert        : #0D9D33
+Bleu        : #0D779D
+Bleu vert   : #0D9D7B
+
+http://www.colorsontheweb.com/colorwizard.swf

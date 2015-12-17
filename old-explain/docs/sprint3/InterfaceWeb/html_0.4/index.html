@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>NEW</title>
+
+        <link rel="stylesheet" href="style/global.css" />
+
+        <script src="scripts/jquery.js"></script>
+<script src="scripts/Pages.js"></script>
+        <script src="scripts/Fun.js"></script>
+        <script src="scripts/main.js"></script>
+		<script src="scripts/exercice.js"></script>
+        
+        <link rel='stylesheet' type='text/css' href='style/fullcalendar.css' />
+        <script type='text/javascript' src='scripts/fullcalendar.js'></script>
+    </head>
+    <body>
+        <p id="javascriptNotEnabledMessage">You need to enable Javascript to continue.</p>
+
+        <!-- HEADER ----------------------------------------------------------->
+        <header>
+            <div id="header-top">
+                <div id="header-top-left">
+        
+                    <img src="images/logo.png" alt="Logo" id="logo" />
+                    <p id="title">NEW</p>
+<!--
+                    <form action="#" method="post" id="search">
+                        <input type="text" name="search">
+                        <input type="submit" value="" id="searchButton" >
+                    </form> -->
+                </div>
+
+                <div id="header-top-right">
+                    <ul>
+                        <li><a id="dashboardLink" href="">Tableau de Bord</a></li>
+                        <li><a id="myCoursesLink" href="">Mes cours</a></li>
+                        <li><a id="myAccountLink" href="">Mon compte</a></li>
+                        <li><a id="aboutLink" href="">À propos</a></li>
+                        <li><a id="authenticationLink" href="">Connexion</a></li>
+                        <li><a id="deauthenticationLink" href="">Deconnexion</a></li>
+            </ul>
+                </div>
+            </div>
+        </header>
+
+        <!-- PAGES ------------------------------------------------------------>
+        <main>
+
+            <!-- PAGE : About ------------------------------------------------->
+            <div id="about" class="pages">
+                <h1>À propos</h1>
+
+                <h2>A quoi sert NEW ?</h2>
+
+                <h3>Vous êtes professeur :</h3>
+                <p> Sur la plateforme, le professeur pourra réaliser un certain nombre de tâche :
+                    <ul>
+                        <li> Consulter la liste des cours </li>
+                        <li> Creer un nouveau cours </li>
+                        <li> Rédiger des feuilles d’exercices et les soumettre (terminées ou non) </li>
+                        <li> Reprendre la rédaction de feuilles d’éxercices </li>
+                        <li> Corriger les exercices soumis par les étudiants </li>
+                        <li> Afficher les statistiques liées a leurs cours </li>
+                    </ul></p>
+
+                <h3>Vous êtes étudiant :</h3>
+                <p> Sur la plateforme, l’étudiant pourra réaliser un certain nombre de tâche :
+                    <ul>
+                        <li> Consulter la liste des cours </li>
+                        <li> S’inscrire à un cours de la liste </li>
+                        <li> Se désinscrire d’un cours </li>
+                        <li> Travailler en ligne sur une feuille d’exercices/devoirs </li>
+                        <li> Reprendre un devoir inachevé, et donc sauvegarder un travail inachevé </li>
+                        <li> Remettre un devoir terminé </li>
+                        <li> Déposer à nouveau un devoir terminé (la date limite étant fixé par les professeurs) </li>
+                    </ul></p>
+
+                <h2>Qu'est-ce-que NEW ?</h2>
+                <p> NEW est une solution logicielle inovante qui permet de mettre en relation étudiants et professeurs. NEW refléte une tendance actuelle qui est de lier les personnes à travers un site internet « social ». De ce fait, NEW est une plateforme social et collaborative qui permet à chacun d'apprendre de nouvelles connaissances en intéragissant avec les professeurs ou les autres étudiants. </p>
+
+                <h2>Pourquoi choisir NEW ?</h2>
+                <p>NEW offre un environnement clair et simple d'utilisation à tous les nouveaux utilisateurs qui souhaite apprendre de nouvelles connaissances. Les cours proposés sont modérés par nos services pour que vous ayez à tout moment un cours qui soit structuré en chapitre et de qualités. Vous aurez aussi la possibilité de vous exercez par l'intermédiaire de questionaire à choix multiples, des questions libres, des questions à réponses formatées ou bien même de nous envoyer des programmes informatiques. Vous pourrez suivre l'évolution de votre parcours au moyen d'un tableau de bord pour vous permettre de comprendre où se situent vos erreurs.</p>
+            </div>
+
+            <!-- PAGE : Dashboard-------------------------------------------------->
+            <div id="dashboard" class="pages">
+<div id="dashBoardCalendar"></div>
+                <h1>Tableau de bord</h1>
+                <p id="messageOfTheDay">Bonjour !</p>
+                <div id="news">
+                    <h2>Dernières actualités :</h2>
+                    <ul>
+                        <li>Nouveau cours </li>
+                        <li>Spolight sur ... </li>
+                        <li>News... </li>
+                        <li>Changement </li>
+                    </ul>
+                </div>
+                <div id="todo">
+                    <h2>À faire :</h2>
+                    <ul>
+                        <li>Répondre au quizz n°2 de BDAv </li>
+                    </ul>
+                </div>
+								<div id="communication">
+                    <h2>Communiquer (professeur/étudiant) :</h2>
+										<h3 class="communication_margin">Note de correction</h3>                    
+										<ul class="communication_margin">
+                        <li><a>Message de Marie Texier</a></li>
+												<li><a>Message de Arthur Lelouche</a></li>
+                    </ul>
+                </div>
+                <div id="other">
+                    <h2>OoOooOooOoO</h2>
+                    <p>Mauris sit amet lorem semper, auctor dolor eu, sagittis nulla. Nulla pretium eleifend metus eget rutrum. Ut imperdiet nisi at vulputate luctus. Cras purus augue, facilisis nec nunc eget, adipiscing facilisis dui. Vestibulum placerat sed est ut hendrerit. Nulla ac tortor vitae elit rutrum consectetur. Donec sit amet pulvinar ipsum. Sed sit amet fermentum tortor. Maecenas ac scelerisque urna. Etiam tincidunt arcu ac posuere porttitor. Phasellus scelerisque scelerisque nisi, at vehicula odio tincidunt a. Morbi ut neque id nibh sodales molestie. </p>
+                </div>
+            </div>
+
+            <!-- PAGE : Courses ----------------------------------------------->
+            <div id="courses" class="pages">
+                <h1>Cours</h1> <a id="dev_courseListRefresh" href="">dev_refreshCoursesList</a>
+                <p> Liste de mes cours : </p>
+                <table id="coursesTable">
+                </table>
+                <a id="addExerciceLink" onclick="">Ajouter un exercice</a>
+            </div>
+
+            <!-- PAGE : Account ----------------------------------------------->
+            <div id="account" class="pages">
+                <h1>Mon compte</h1>
+								<div>
+										<table id="profil_table">
+												<thead id=profil_head>
+													<tr>
+														<th><img src="./images/contacts.ico" width="50px" height="50px" alt="Photo de profil" />
+													</tr>
+												</thead>
+												<tbody id="profil_body">
+													<tr>
+														<td>Nom : </td>
+														<td class="column_right">Dupont</td>
+													</tr>
+													<tr>
+														<td>Prénom : </td>
+														<td class="column_right">George</td>
+													</tr>
+													<tr>
+														<td>Date de naissance : </td>
+														<td class="column_right">04/02/1942</td>
+													</tr>
+													<tr>
+														<td>Date d'inscription :</td>
+														<td class="column_right">17/05/2014</td>
+													</tr>
+													<tr>
+														<td>Type de compte :</td>
+														<td class="column_right">Professeur</td>
+													</tr>
+													<tr>
+														<td>Etat :</td>
+														<td class="column_right">Actif</td>
+													</tr>
+													<tr>
+														<td>Désactiver mon compte :</td>
+														<td class="column_right"><a href="">Désactiver</a></td>
+													</tr>
+													<tr>
+														<td>Mot de passe :</td>
+														<td class="column_right"><a href="">Changer de mot de passe</a></td>
+													</tr>
+													<tr>
+														<td>Se désinscrire :</td>
+														<td class="column_right"><a href="">Supprimer mon compte</a></td>
+													</tr>
+												</tbody>		
+										</table>	
+								</div>
+            </div>
+
+            <!-- PAGE : Authentication ---------------------------------------->
+            <div id="authenticationBox" class="pages">
+                <h1>NEW MOOC Authentification</h1>
+                <form id="authentificationForm" method="post">
+                    <div>
+                        <label>Server</label>
+                        <input type="text" id="server" />
+                    </div>
+                    <div>
+                        <label>Login</label>
+                        <input type="text" id="login" />
+                    </div>
+                    <div>
+                        <label>Password</label>
+                        <input type="password" id="password" />
+                    </div>
+                    <button type="submit">
+                        Connect
+                    </button>
+                </form>
+                <a id="dev_loginAsProfessor" href="">dev_loginAsProfessor</a>
+                <a id="dev_loginAsStudent" href="">dev_loginAsStudent</a>
+            </div>
+
+            <!-- PAGE : AddExercice ------------------------------------------->
+            <div id="addExercice" class="pages">
+                <h2>Ajouter un nouvel exercice :</h2>
+                <div id="choix-creation">
+                    <!-- Section consigne : pour aider l'utilisateur -->
+                    <p> Vous pouvez choisir d'importer un exercice à partir d'un fichier XML, correctement
+                        formaté (cf. voir la page d'aide) ou bien de le créer via notre procédure simplifiée. </p>
+
+                    <!-- Section choix : pour ajouter un exercice à un cours -->
+                    <div id="bouton-selection">
+                        <p id="bouton-importer" class="bouton" onclick="importFile()"> Importer un fichier XML </p>
+                        <p id="bouton-creer" class="bouton" onclick="createExercice()"> Créer un exercice </p>
+                    </div>
+
+                    <!-- Section contenu : pour visualiser les choix effectué -->
+                    <div id="exercice-contenu"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER ----------------------------------------------------------->
+        <footer>
+            <div id="footer_menu">
+                <ul class="mentions-legales-list">
+                    <a href=""><li>Mentions légales</li></a>
+                    <a href=""><li>Contact</li></a>
+                </ul>
+                <ul class="mentions-legales-list">
+                    <a href=""><li>Conditions Générales d'utilisations</li></a>
+                    <a href=""><li>Foire Aux Questions</li></a>
+                </ul>
+            </div>
+            <!-- Réseaux sociaux -->
+            <div id="footer_social">
+                <!--<span>
+                <p>Suivez-nous sur</p>
+                </span>-->
+                <span id="footer_social_link"> <!-- Pour l'instant désactivé, permet d'eviter d'avoir des erreurs dans les logs quand on n'est pas connecté à internet
+                    <img src="./png/FB_FindUsOnFacebook-100.png" alt="Find us on Facebook" width="100px" height="26px" />
+                    <a href="https://twitter.com/NEW" class="twitter-follow-button" data-show-count="false" data-lang="fr">Suivre @NEW</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                    --></span>
+            </div>
+            <!-- Concepteur -->
+            <div id="footer_concepteur">
+                <p><a href="">powered by Team M1GLAV</a></p>
+            </div>
+        </footer>
+    </body>
+</html>

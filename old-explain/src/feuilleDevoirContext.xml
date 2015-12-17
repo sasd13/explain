@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ISO_8859-1"?>
+ 
+<!DOCTYPE beans SYSTEM "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!--   XSD header 
+<beans 
+	xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+              http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+              http://www.springframework.org/schema/context
+              http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	
+	<context:property-placeholder 
+		location="classpath*:META-INF/spring/*.properties" /> 
+	
+	<context:annotation-config />
+ 	-->
+ 
+ <!-- la source de donnéees DBCP -->
+ <beans>
+<bean id="dataSource" 
+ 	class="org.apache.commons.dbcp.BasicDataSource"> 
+	 <property name="driverClassName">
+	 	<value>org.postgresql.Driver</value> 
+	 </property>
+	 <property name="url">
+	 <!-- pas d'espaces entre les deux balises <value> -->
+		 <!--  <value>jdbc:postgresql:dbplateformedevoirs.gdb</value>-->
+		 <value>jdbc:postgresql://localhost:5432/postgres</value>
+	 </property>
+	 <property name="username">
+	 	<value>postgres</value>
+	 </property>
+	 <property name="password">
+	 	<value>admin</value>
+	 </property>
+ </bean>
+
+ <!-- SqlMapCllient -->
+
+ <bean id="SqlMapClient"
+	class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+	<!-- destroy-method="close" -->
+	 <property name="dataSource">
+	 	<ref local="dataSource"/>
+	 </property>
+	 <property name="configLocation">
+	 	<value>classpath:sql-map-config-postgres.xml</value>
+	 </property >
+ </bean>
+
+ <!-- la classes d'accès à la couche [dao] -->
+
+ <bean id="feuilledevoir_Dao" class="Dao.FeuilleDevoirImpl" 
+ parent="SqlMapClientDaoSupport">
+	 <property name="sqlMapClient">
+	 	<ref local="SqlMapClient"/>
+	 </property>
+ </bean>
+
+<bean id="SqlMapClientDaoSupport" 
+	class="org.springframework.orm.ibatis.support.SqlMapClientDaoSupport" >
+
+</bean>
+ <!-- gestionnaire de transactions 
+
+ <bean id="transactionManager"
+ class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+ <property name="dataSource">
+ <ref local="dataSource"/>
+ </property>
+ </bean>
+
+ // la classes d'accès à la couche [service] 
+ <bean id="service"
+	 class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		 <property name="transactionManager">
+		 <ref local="transactionManager"/>
+		 </property>
+		 <property name="target">
+		 <bean class="service.ServiceImpl">
+		 <property name="dao">
+		 <ref local="dao"/>
+		 </property>
+		 </bean>
+	 </property>
+	 <property name="transactionAttributes">
+		 <props>
+		 <prop key="select*">PROPAGATION_SUPPORTS,readOnly</prop>
+		 <prop key="save*">PROPAGATION_REQUIRED</prop>  //insert ou upddate 
+		 <prop key="delete*">PROPAGATION_REQUIRED</prop>
+		 </props>
+	 </property>
+ </bean>
+ -->
+ </beans>

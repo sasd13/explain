@@ -1,0 +1,270 @@
+.hidden {
+    display: none;
+}
+
+.pages {
+    display: none;
+}
+
+#authenticationBox {
+    border: 1px solid blue;
+    padding: 16px;
+    overflow: auto;
+    width: 590px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+}
+
+#authenticationBox h1 {
+    padding: 0px;
+    font-size: 1.2em;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#authenticationForm label {
+    font-weight: bold;
+    display: inline-block;
+    text-align: right;
+    width: 24%;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+#authenticationForm input {
+    width: 74%;
+}
+
+#authenticationForm button {
+    display: block;
+    float: right;
+    clear: both;
+    width: 75%;
+}
+
+body {
+    font-family: 'Arial Narrow', sans-serif;
+    color: #9D0E30;
+}
+
+a {
+    color: #0D779D;
+}
+
+header {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #eee;
+    z-index: 10;
+}
+
+#header-top {
+    width: 900px;
+    margin: auto;
+}
+
+#header-top-left {
+    float: left;
+}
+
+#header-top-left * {
+    float: left;
+}
+
+#header-top-left #logo {
+    height: 60px;
+}
+
+#header-top-left #title {
+    display: inline-block;
+    font-family: 'Time New Roman', serif;
+    font-style: normal;
+    font-weight: 400;
+    padding-left: 5px;
+}
+
+#header-top-left #search {
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+#header-top-left #search #searchButton {
+    background-image: url('../images/magnifier.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+
+#header-top-right {
+    float: right;
+}
+
+#header-top-right ul li {
+    margin-right: 12px;
+    list-style-type: none;
+    display: inline-block;
+}
+
+#header-top-right ul li a {
+    text-decoration: none;
+    font-variant: small-caps;
+    font-family: Tahoma, Geneva, sans-serif;
+    color: #9D1B0D;
+}
+
+main {
+    margin-top: 70px;
+    width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+footer {
+    display: none;
+    border-top-style: dotted;
+    width: 900px;
+    margin: auto;
+}
+
+#addExercice {
+    width: 896px;
+    padding-left: 4px;
+    border-top: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    overflow: auto;
+}
+
+#bouton-selection {
+    /*margin-top: -10px;*/
+}
+
+#bouton-creer {
+    margin-top: -50px;
+    margin-left: 212px;
+}
+
+#footer_menu {
+    width: 400px;
+    height: 40px;
+    float: left;
+    margin: 10px 10px 0px;
+    padding: 0px;
+    font-family: 'Arial';
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.5em;
+}
+
+.mentions-legales-list {
+    list-style-type: none;
+    display: inline;
+    float: left;
+    margin-top: -5px;
+}
+
+#footer_social {
+    width: 200px;
+    height: 40px;
+    float: left;
+    margin: 10px 10px 0px;
+    padding: 0px;
+}
+
+#footer_concepteur {
+    width: 150px;
+    height: 40px;
+    float: right;
+    margin: 10px 10px 0px;
+    padding-right: 40px;
+    font-family: 'Arial';
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#profil_table {
+		border: 0; 
+		cellspacing: 2px; 
+		cellpadding: 2px;
+		margin-botton: 2px;
+}
+
+#profil_head {
+		float: left;
+}
+
+.column_right {
+		color: #000000;	
+		padding-left: 15px;
+		float: right;
+}
+
+#profil_body {
+	
+}
+
+.communication_margin {
+	margin-left: 30px;
+}
+
+/* Liens */
+
+a {
+    text-decorat
+            'rows': 5,
+            'fname': '{firstName}',
+            'lname': '{lastName}',
+            'tel': '{phone|format}',
+            'callback': "JSON_CALLBACK"
+        }ion: none;
+    color: #000000;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0000FF;
+}
+
+a:active {
+    text-decoration: none;
+    color: #0000FF;
+}
+
+/* Boutons */
+
+.bouton {
+    font-family: Arial, sans-serif;
+    font-size: 1.1em;
+    width: 200px;
+    height: 25px;
+    padding-top: 7px;
+    text-align: center;
+    background-color: #FFDEDE;
+    background: -webkit-linear-gradient( #F29494, #F7B3B3);
+    background: -moz-linear-gradient( #F29494, #F7B3B3);
+    background: -ms-linear-gradient( #F29494, #F7B3B3);
+    background: -o-linear-gradient( #F29494, #F7B3B3);
+    background: linear-gradient( #F29494, #F7B3B3);
+    border-radius: 8px;
+    text-shadow: 0px 1px 0px white;
+    box-shadow: 0 0 5px rgba( 0, 0, 0, 0.5), 0 -1px 0 rgba( 255, 255, 255, 0.4);
+}
+
+.bouton:hover {
+    color: #222;
+    background: #FC9494;
+}
+
+.bouton:active {
+    color: #000;
+    background: #F36767;
+    box-shadow: 1px 1px 10px black inset, 0 1px 0 rgba( 255, 255, 255, 0.4);
+}
+
+#dashBoardCalendar {
+    float:right;
+    width:35%;
+}

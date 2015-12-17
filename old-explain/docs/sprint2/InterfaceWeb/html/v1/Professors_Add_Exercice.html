@@ -1,0 +1,122 @@
+<!---
+TODO:
+- Faire jolie l'image dans le bouton.
+- Champ de recherche: mettre un truc par defaut qui s'efface tout seul.
+
+http://letrainde13h37.fr/44/menu-deroulant-accessible-css/
+-->
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Professeur - Page d'accueil</title>
+        <link rel="stylesheet" href="design.css" />
+		<script type="text/javascript" src="script.js"></script> 
+    </head>
+    <body onload="initLoad()">
+        <header>
+	  <div id="header-top">
+            <div id="header-top-left">
+            
+                <img src="logo.png" alt="Logo" id="logo" />
+                
+                <form action="Professors.html" id="search">
+                    <input type="text" name="search">
+                    <input type="submit" value="" id="searchButton" >
+                </form>
+            </div>
+            
+            <div id="header-top-right">
+                <ul>
+                    <li><a href="">Mes cours</a></li>
+                    <li><a href="">Mon compte</a></li>
+                    <li><a href="">À propos</a></li>
+                </ul>
+            </div>
+	  </div>
+        </header>
+        
+        <main>
+        
+          <div><a href="">Ceci est un lien pour montrer la couleur.</a></div>
+        
+          <div id="main-important">
+	    <div id="main-important-left">
+	      <h2>À faire :</h2>
+              <ul>
+		<li>Répondre au quizz n°2 de BDAv</li>
+		<li>Répondre au quizz n°1 de LOAv</li>
+		<li>Prendre contact avec Miss Irlande 2013</li>
+              </ul>
+            </div>
+	    <div id="main-important-right">
+              <table>
+		<tr>
+                  <th colspan="3">Calendrier</th>
+		</tr>
+		<tr>
+		  <td>3</td>
+		  <td>4</td>
+		  <td>5</td>
+		</tr>
+		<tr>
+		  <td>6</td>
+		  <td>7</td>
+		  <td>8</td>
+		</tr>
+		<tr>
+		  <td>9</td>
+		  <td>10</td>
+		  <td>11</td>
+		</tr>
+              </table>
+	    </div>
+	  </div> 
+	  <div id="main-exercice">
+            <h2>Ajouter un nouvel exercice :</h2>
+            
+			<div id="choix-creation">
+				<!-- Section consigne : pour aider l'utilisateur -->
+				<p>
+					Vous pouvez choisir d'importer un exercice à partir d'un fichier XML, correctement 
+					formaté (cf. voir la page d'aide) ou bien de le créer via notre procédure simplifiée.
+				</p>
+				
+				<!-- Section choix : pour ajouter un exercice à un cours -->
+				<div id="bouton-selection">
+					<p id="bouton-importer" class="bouton" onclick="importFile()">Importer un fichier XML</p>
+					<p id="bouton-creer" class="bouton" onclick="createExercice()">Créer un exercice</p>
+				</div>
+				
+				<!-- Section contenu : pour visualiser les choix effectué -->
+				<div id="exercice-contenu">
+				</div>
+				
+				<!-- Section soumettre : pour soumettre l'exercice -->
+				<br/>
+				<button id="exercice-soumission" type="button">Soumettre l'exercice</button>
+			</div>
+	  </div>
+	  <div id="main-cours">
+	    <table>
+	      <tr>
+                <th colspan="3">Calendrier</th>
+	      </tr>
+	      <tr>
+		<td><div class="main-cours-box">LOBAJ<br />Langage Objets Avancés</div></td>
+		<td><div class="main-cours-box">ALGAV<br />Algorithmie Avancée</div></td>
+		<td><div class="main-cours-box">PFAV<br />Programmation Fonctionelle Avancée</div></td>
+	      </tr>
+	      <tr>
+		<td><div class="main-cours-box">PROLOG<br />Programmation par Contraintes</div></td>
+		<td><div class="main-cours-box">BDAV<br />Base de Données Avancées</div></td>
+		<td><div class="main-cours-box">SYSTEME<br />Programmation Système</div></td>
+	      </tr>
+	  </div>
+        </main>
+        <footer>
+            <p></p>
+        </footer>
+    </body>
+</html>

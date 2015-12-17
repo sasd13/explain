@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<beans>
+	<bean id="feuilleDevoir_objet1" class="FeuilleDevoir" init-method="init" >
+		<property name="id" value="1"/>
+		<property name="idProf "  value="1"/>
+		<property name="maxRendu "  value="3 "/>
+		<property name="dateRendu "  value="30/05/2014"/>
+	</bean>
+
+</beans>

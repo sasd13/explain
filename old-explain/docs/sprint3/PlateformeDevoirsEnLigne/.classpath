@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/postgresql-9.3-1101.jdbc4.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/sqljdbc.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/standard.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/taglibs-datetime.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/taglibs-standard-impl-1.2.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/taglibs-standard-jstlel-1.2.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/taglibs-standard-spec-1.2.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/tomcat-servlet-api-7.0.23.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-3.1.9-bin.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/log4j-1.2.9.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/junit.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/ibatis-sqlmap-2.jar" sourcepath="WebContent/WEB-INF/lib/spring-src.zip"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/ibatis-common-2.jar" sourcepath="WebContent/WEB-INF/lib/ibatis_src.zip"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-pool.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-dbcp-1.2.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-collections.jar"/>
+	<classpathentry kind="lib" path="D:/Program/Spring/ibatis_src.zip"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring.jar" sourcepath="WebContent/WEB-INF/lib/spring-src.zip"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
